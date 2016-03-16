@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>ascii-heart Demo</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../ascii-heart.html">
+    <style>
+    body{ font-family: Helvetica, Verdana, sans-serif}
+    </style>
+  </head>
+  <body>
+
+<p>An example of <code>&lt;ascii-heart&gt;</code>:</p>
+
+<p>Set your heart rate (beats per minute) 
+    <input id="beatrate" type="number" value="60"></p>
+
+<br><br>
+    
+
+    <ascii-heart color="red"></ascii-heart>
+
+ 
+
+<script>
+  var beat = document.getElementById('beatrate'),
+      heart = document.getElementsByTagName('ascii-heart')[0];
+
+  beat.addEventListener('input', function()
+  {
+      heart.setAttribute('rate', beat.value);
+  });
+</script>
+
+  </body>
+</html>

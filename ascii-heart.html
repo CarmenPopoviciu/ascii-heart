@@ -4,7 +4,7 @@ Animated ascii heart Polymer element.
 
 Example:
 
-    <ascii-heart></ascii-heart>
+    <ascii-heart color="red"></ascii-heart>
 
 @demo
 -->
@@ -12,9 +12,11 @@ Example:
   <style>
 
     :host {
-      --color: red;
+      --color: inherit;
       --beat-animation: '';
     }
+
+    :host div { display: inline-block};
 
       .container {
         height: 25px;
@@ -28,7 +30,6 @@ Example:
       
       .animate {
         animation: var(--beat-animation);
-        /*animation: heart_beat 1s infinite;*/
         transform-origin: 50% 50%; 
         height: 25px;
         width: 25px; 
@@ -76,7 +77,7 @@ Example:
     },
 
     setColor: function() {
-      this.customStyle['--heart-color'] = this.color;
+      this.customStyle['--heart-color'] = this.color || 'inherit';
       this.updateStyles();
     },
 
